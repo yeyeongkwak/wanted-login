@@ -1,6 +1,7 @@
-import { Divider, Layout, Space, Typography } from "antd";
+import { Avatar, Divider, Layout, Space, Typography } from "antd";
 import { CSSProperties } from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 const { Header } = Layout;
 const { Text } = Typography;
 
@@ -9,26 +10,43 @@ export const LoginHeader = () => {
     color: "white",
     height: 80,
     paddingInline: 50,
-    lineHeight: "64px",
-    // backgroundColor: "#7dbcea",
-    display: "flex",
+    width: "100%",
     alignItems: "center",
   };
 
   return (
     <Layout>
       <Header style={headerStyle}>
-        <Grid gridTemplateColumns={"50px 3fr 30px"}>
+        <Grid templateColumns={"repeat(8,1fr)"} style={{ marginTop: "10px" }}>
           <GridItem colSpan={2}>
-            <Text style={{ color: "white", fontSize: "20px" }}>
-              wanted-onboarding
-            </Text>
+            <Link to={"/"}>
+              <Text style={{ color: "white", fontSize: "20px" }}>
+                wanted-onboarding
+              </Text>
+            </Link>
           </GridItem>
-          <GridItem colStart={4} colEnd={8}>
+          <GridItem colStart={6} colEnd={12}>
             <Space split={<Divider type="vertical" />}>
-              {/*<Typography.Link>Login</Typography.Link>*/}
-              <Typography.Link>Used Technique</Typography.Link>
-              <Typography.Link>What I am going to learn</Typography.Link>
+              <Link to={"/login"}>
+                <Typography.Link style={{ color: "white" }}>
+                  Login
+                </Typography.Link>
+              </Link>
+              <Link to={"/future-tasks"}>
+                <Typography style={{ color: "white" }}>
+                  What I am going to learn
+                </Typography>
+              </Link>
+              <Link to={"/technique"}>
+                <Typography style={{ color: "white" }}>
+                  Used Technique
+                </Typography>
+              </Link>
+              <Avatar
+                src={
+                  "https://image.jtbcplus.kr/data/contents/jam_photo/202306/10/5ebc5232-e43c-4f9c-83ae-66ff5679726a.jpg"
+                }
+              />
             </Space>
           </GridItem>
         </Grid>

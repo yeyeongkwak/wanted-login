@@ -1,9 +1,25 @@
 import { Box, Flex, Stack } from "@chakra-ui/react";
 import { Input, Button } from "antd";
-import { Password } from "./Input/Password";
+import { useFormik } from "formik";
+import {
+  EyeInvisibleOutlined,
+  EyeTwoTone,
+  KeyOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 export const LoginInputForm = () => {
   const invalid = false;
+  const { values, errors, setErrors, setValues, setTouched } = useFormik({
+    initialValues: {
+      id: "",
+      pw: "",
+    },
+    onSubmit: () => {
+      console.log(values.id, values.pw);
+    },
+  });
+
   return (
     <Box
       color="gray.500"
@@ -21,11 +37,33 @@ export const LoginInputForm = () => {
             size="large"
             status={invalid ? "error" : ""}
             style={{ width: "400px" }}
+            prefix={<UserOutlined />}
+            onChange={(e) => setValues({ ...values, id: e.target.value })}
           />
-          <Password invalid={invalid} width={"400px"} />
+          <Input.Password
+            placeholder="Enter Password"
+            size={"large"}
+            status={invalid ? "error" : ""}
+            style={{ width: "400px" }}
+            iconRender={(visible) =>
+              visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
+            }
+            prefix={<KeyOutlined />}
+            onChange={(e) => {
+              setValues({ ...values, pw: e.target.value });
+            }}
+          />
         </Stack>
         <Stack alignItems={"center"} marginTop={"20px"}>
-          <Button size={"large"} type={"primary"} style={{ width: "50%" }}>
+          <Button
+            size={"large"}
+            style={{
+              width: "50%",
+              color: "white",
+            }}
+            type={"primary"}
+            onClick={() => console.log(values)}
+          >
             Login
           </Button>
         </Stack>
