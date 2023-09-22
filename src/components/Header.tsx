@@ -37,11 +37,11 @@ export const LoginHeader = () => {
                   What I am going to learn
                 </Typography>
               </Link>
-              <Link to={"/technique"}>
-                <Typography style={{ color: "white" }}>
-                  Used Technique
-                </Typography>
-              </Link>
+              {/*<Link to={"/technique"}>*/}
+              {/*  <Typography style={{ color: "white" }}>*/}
+              {/*    Used Technique*/}
+              {/*  </Typography>*/}
+              {/*</Link>*/}
               <Avatar
                 src={
                   "https://image.jtbcplus.kr/data/contents/jam_photo/202306/10/5ebc5232-e43c-4f9c-83ae-66ff5679726a.jpg"
