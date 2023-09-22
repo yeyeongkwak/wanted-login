@@ -32,16 +32,16 @@ export const LoginHeader = () => {
                   Login
                 </Typography.Link>
               </Link>
+              <Link to={"/task2/mock-api"}>
+                <Typography style={{ color: "white" }}>
+                  Print mock-data
+                </Typography>
+              </Link>
               <Link to={"/future-tasks"}>
                 <Typography style={{ color: "white" }}>
                   What I am going to learn
                 </Typography>
               </Link>
-              {/*<Link to={"/technique"}>*/}
-              {/*  <Typography style={{ color: "white" }}>*/}
-              {/*    Used Technique*/}
-              {/*  </Typography>*/}
-              {/*</Link>*/}
               <Avatar
                 src={
                   "https://image.jtbcplus.kr/data/contents/jam_photo/202306/10/5ebc5232-e43c-4f9c-83ae-66ff5679726a.jpg"

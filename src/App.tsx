@@ -5,6 +5,7 @@ import { LoginHeader } from "./components/Header";
 import { Container } from "@chakra-ui/react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FutureTasks } from "./page/FutureTasks";
+import { MockApi } from "./components/MockApi";
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
         <LoginHeader />
         <Routes>
           <Route path={"/"} element={<FutureTasks />} />
-          <Route path="/login" element={<Login />}></Route>
+          <Route path={"/task1/login"} element={<Login />} />
+          <Route path={"/task2/mock-api"} element={<MockApi />} />
           <Route path="/future-tasks" element={<FutureTasks />}></Route>
         </Routes>
       </BrowserRouter>
