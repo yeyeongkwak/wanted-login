@@ -27,7 +27,7 @@ export const LoginHeader = () => {
           </GridItem>
           <GridItem colStart={6} colEnd={12}>
             <Space split={<Divider type="vertical" />}>
-              <Link to={"/login"}>
+              <Link to={"/task1/login"}>
                 <Typography.Link style={{ color: "white" }}>
                   Login
                 </Typography.Link>
