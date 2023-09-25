@@ -49,7 +49,9 @@ export const MockApi = () => {
               <p
                 style={{
                   textDecoration:
-                    d.id.toString() === checked.id ? "line-through" : "none",
+                    d.id.toString() === checked.id && checked.done
+                      ? "line-through"
+                      : "none",
                 }}
               >
                 {d.title}
